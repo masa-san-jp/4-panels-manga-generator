@@ -147,3 +147,16 @@ This is a development harness with:
 ## License
 
 MIT
+
+
+## Usage in context
+
+“Use the 4-Panel Manga Generator to turn four scene descriptions and a shared character reference into one four-panel image” describes the intended workflow. Layout references guide panel arrangement; character references and per-panel states express continuity across scenes.
+
+## Design rationale
+
+The [design specification](doc/DESIGN.md) separates character references, layout, scene descriptions, and output constraints in a structured generation request. This makes the creator's visual intent explicit and keeps reference preparation separate from the API call. Generated images still need human review for narrative and visual consistency.
+
+## Development history and status clarification
+
+The [initial plan](https://github.com/masa-san-jp/4-panels-manga-generator/commit/dc83a6dd855811c7b3161475d853fb8157387169) was followed on 14 February 2026 by [Phase 1 implementation](https://github.com/masa-san-jp/4-panels-manga-generator/commit/5ddd42b86b3c8e36d3f18429d97b58ce37992b24). [gemini_client.py](gemini_client.py) now contains a Gemini client and streaming image-generation call, and [prompt_builder.py](prompt_builder.py) builds the prompt. The earlier “Current Status / TODO” list above describes the initial harness and is not a current implementation inventory. This documentation change does not verify live model availability, credentials, or production operation.
